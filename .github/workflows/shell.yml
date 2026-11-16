@@ -11,6 +11,7 @@ jobs:
       - name: Starting a solaris VM
         uses: vmactions/solaris-vm@v1
         with:
+          sync: scp
           run: |
             pwd
             ls -lah
