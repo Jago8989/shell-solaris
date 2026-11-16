@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Starting a solaris VM, please wait. It may take 5 minutes
       id: shell
-      uses: vmactions/solaris-vm@v1
+      uses: vmactions/solaris-vm
       with:
         run: |
           pwd
@@ -20,6 +20,6 @@ jobs:
           cat /etc/release
           echo "OK"
     - name: Sleep
-      run: sleep 5
-    - uses: neilpang/debugger-action@master
+      run: sleep 0
+    - uses:
 
