@@ -1,4 +1,3 @@
-
 name: shell
 
 on: [push, workflow_dispatch]
@@ -7,19 +6,16 @@ jobs:
   runshell:
     runs-on: macos-latest
     name: Start a Solaris shell
+
     steps:
-    - name: Starting a solaris VM, please wait. It may take 5 minutes
-      id: shell
-      uses: vmactions/solaris-vm
-      with:
-        run: |
-          pwd
-          ls -lah
-          whoami
-          env
-          cat /etc/release
-          echo "OK"
-    - name: Sleep
-      run: sleep 0
-    - uses:
+      - name: Starting a solaris VM
+        uses: vmactions/solaris-vm@v1
+        with:
+          run: |
+            pwd
+            ls -lah
+            whoami
+            env
+            cat /etc/release
+            echo "OK"
 
